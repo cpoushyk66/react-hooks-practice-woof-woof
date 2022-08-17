@@ -27,13 +27,13 @@ function App() {
     dogs[dog.id - 1].isGoodDog = dog.isGoodDog;
 
     const configObj = {
-      method: "POST",
+      method: "PATCH",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dog)
     }
 
 
-    fetch(`http://localhost:3001/pups/${dog.id}`)
+    fetch(`http://localhost:3001/pups/${dog.id}`, configObj)
     .then(res => res.json())
     .then(console.log)
 
